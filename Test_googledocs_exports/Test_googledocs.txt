@@ -1,0 +1,4 @@
+﻿The following document outlines the theory behind CI for google docs with github and gerrit addition.
+
+
+Working?
