@@ -15,4 +15,10 @@ Technology used:
 
 1. Google Docs: Collaborative editing of documentation. 
 2. Go drive script for collection of google docs on change 
-3. Github for storage of the docs versions, or as a target project for documentation generation.
+3. Github for storage of the docs versions, or as a target project for documentation generation. 
+
+
+The Workflow for documents: 
+
+
+Googledocs -> Gerrit -> Voted Approval -> Github -> Distribution
