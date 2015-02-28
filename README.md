@@ -1,2 +1,4 @@
 # l1nuxt3ch
-Repo for worked open source Linux related projects
+
+#This is a linux based solution for Continuous Improvement of collaborative
+ Googledocs projects. See docs dir for documentation and explanation
