@@ -24,4 +24,7 @@ The Workflow for documents:
 Googledocs -> Gerrit -> Voted Approval -> Github -> Distribution
 
 
-The following line is a test update
+The following line is a test update[a]
+
+
+[a]James this is working now.. through gerrit, please give me your gerrit email so I can add you to the test project :)
