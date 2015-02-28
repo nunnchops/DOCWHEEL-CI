@@ -1,0 +1,30 @@
+﻿Open Source Software Documentation Continuous Improvement using Google Docs, Github and Gerrit
+
+
+
+
+Technical implementation of a DevOps Continuous Improvement methodology to create collaborative software documentation. 
+The following document outlines the theory behind CI for google docs with github and gerrit addition.
+
+
+The rationale is the use of googledocs for collaborative document editing and creation. A project documentation artefact is collaboratively written and continuously pushed to a github repo on change, Gerrit is used to approve and track the changed documentation. The commits could be daily/nightly or by the minute, depending on change and approval cadence.  
+
+
+Technology used: 
+
+
+1. Google Docs: Collaborative editing of documentation. 
+2. Go drive script for collection of google docs on change 
+3. Github for storage of the docs versions, or as a target project for documentation generation. 
+
+
+The Workflow for documents: 
+
+
+Googledocs -> Gerrit -> Voted Approval -> Github -> Distribution
+
+
+The following line is a test update[a]
+
+
+[a]James this is working now.. through gerrit, please give me your gerrit email so I can add you to the test project :)
