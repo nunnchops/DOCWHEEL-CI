@@ -7,7 +7,14 @@ Technical implementation of a DevOps Continuous Improvement methodology to creat
 The following document outlines the theory behind CI for google docs with github and gerrit addition.
 
 
-The rationale is the use of googledocs for collaborative document editing and creation. A project documentation artefact is collaboratively written and continuously pushed to a Gerrit CI approval system, the proposed changes can be viewed in the text version of the document and approved for push to the master github repo fo, The  Gerrit is used to approve and track the changed documentation. The commits could be daily/nightly or by the minute, depending on change and approval cadence.  
+The rationale is the use of googledocs for collaborative document editing and creation. A project documentation artefact is collaboratively written and continuously pushed to a Gerrit CI approval system, the proposed changes can be viewed in the text version of the document and approved for push to the master github repo to provide a new release of the documentation. Gerrit is used to approve and track the changed documentation. The commits could be daily/nightly or by the minute, depending on change and approval cadence.
+
+
+There are two main use cases: 
+1. The creation of collaborative documentation in a version controlled change approved way. 
+2. The collaborative creation of Software documentation, version controlled and change approved for Github based software projects.   
+There are also other potential use cases: 
+IT Consultants on site at customer engagements who require a version controlled interactive documentation lifecycle. (though information security should an additional consideration in this context)    
 
 
 Technology used: 
