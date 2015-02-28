@@ -13,8 +13,14 @@ The rationale is the use of googledocs for collaborative document editing and cr
 There are two main use cases: 
 1. The creation of collaborative documentation in a version controlled change approved way. 
 2. The collaborative creation of Software documentation, version controlled and change approved for Github based software projects.   
+
+
 There are also other potential use cases: 
 IT Consultants on site at customer engagements who require a version controlled interactive documentation lifecycle. (though information security should an additional consideration in this context)    
+
+
+collaborative config file management? 
+Potential for Dockerfiles to be collaboratively written in Googledocs and change approved/version controlled via Gerrit and Github. 
 
 
 Technology used: 
@@ -22,9 +28,10 @@ Technology used:
 
 1. Google Docs: Collaborative editing of documentation. 
 2. Go drive script for collection of google docs on change 
-3. Automation for Go drive Linux CLI script
-4. Gerrit for change approval and Continuous improvement structure +1 voting approval
-5. Github for version controlled storage of the released docs, or as a target project for documentation generation. 
+3. Bash or Jenkins Automation for Go drive Linux CLI script
+4. Docker image for Golang  and Go drive scripts (available)  
+5. Gerrit for change approval and Continuous improvement structure +1 voting approval
+6. Github for version controlled storage of the released docs, or as a target project for documentation generation. 
 
 
 The Workflow for documents: 
@@ -33,7 +40,4 @@ The Workflow for documents:
 Googledocs -> Gerrit -> Voted Approval -> Github -> Distribution
 
 
-The following line is a test update[a]
-
-
-[a]James this is working now.. through gerrit, please give me your gerrit email so I can add you to the test project :)
+The following line is a test update
