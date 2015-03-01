@@ -1,4 +1,7 @@
-# l1nuxt3ch
+# DOCWHEEL-L3
 
-#This is a linux based solution for Continuous Improvement of collaborative
- Googledocs projects. See docs dir for documentation and explanation
+#This is a linux based DevOps influenced solution 
+#Outlining a method for Continuous Improvement of 
+#collaborative Google Docs projects. 
+#See docs dir for documentation, explanation 
+#and use cases
