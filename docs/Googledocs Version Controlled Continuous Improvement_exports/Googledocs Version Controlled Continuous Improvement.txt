@@ -54,4 +54,5 @@ Technical components:
 2. Gerrit: http://gerrithub.io/
 3. Github: https://github.com/
 4. Docwheel3 script located in this repository in the /scripts/ directory (the CI automation base) 
-5. Linux distribution/Docker with crontab or Jenkins:
+5. Linux distribution/Docker with crontab or Jenkins: http://jenkins-ci.org/ and maybe a go_drive oauth plugin: https://wiki.jenkins-ci.org/display/JENKINS/Google+OAuth+Plugin
+6. Maybe a Jenkins Docker image running on Openshift: https://github.com/openshift/jenkins-1-centos
