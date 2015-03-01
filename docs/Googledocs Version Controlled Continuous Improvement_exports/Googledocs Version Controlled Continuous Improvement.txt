@@ -40,4 +40,10 @@ The Workflow for documents:
 Googledocs -> Gerrit -> Voted Approval -> Github -> Distribution
 
 
+Possible Workflow for software documentation that requires collaborative input from multiple developers: 
+
+
+(Code contains comments) -> Initial text doc created using comments/tooling -> pushed to googledoc and into the Continuous Improvement iterative cycle -> All developers can collaborate on software documentation in a single place -> CI returns 
+
+
 The following line is a test update
