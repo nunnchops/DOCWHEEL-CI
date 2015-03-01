@@ -50,4 +50,8 @@ Additional note: In fact this structure is so positive it is possible to hold ba
 Technical components: 
 
 
-1.
+1. Go drive script located here: https://github.com/odeke-em/drive
+2. Gerrit: http://gerrithub.io/
+3. Github: https://github.com/
+4. Docwheel3 script located in this repository in the /scripts/ directory (the CI automation base) 
+5. Linux distribution/Docker with crontab or Jenkins:
