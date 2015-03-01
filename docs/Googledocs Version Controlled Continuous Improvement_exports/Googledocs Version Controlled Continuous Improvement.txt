@@ -44,4 +44,10 @@ Possible Workflow for software documentation that requires collaborative input f
 
 
 (Code contains comments) -> Initial text doc created using comments/tooling -> pushed to googledoc and into the Continuous Improvement iterative cycle -> All developers can collaborate on software documentation in a single place -> CI returns doc back to the Github source tree via Gerrit approval structure (enables release alignment) 
-Additional note: In fact this structure is so positive it is possible to hold back future patch sets in Gerrit for dedicated release at a specific time. i.e. Documentation could be aligned with new feature improvements but not submitted in Gerrit until new feature set is released.
+Additional note: In fact this structure is so positive it is possible to hold back future patch sets in Gerrit for dedicated release at a specific time. i.e. Documentation could be aligned with new feature improvements but not submitted in Gerrit until new feature set is released. 
+
+
+Technical components: 
+
+
+1.
