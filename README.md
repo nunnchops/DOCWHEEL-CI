@@ -16,7 +16,7 @@ The Following Components are required and used:
 Additional Technology that could be added: 
  * A Linux distribution/Docker with crontab or [Jenkins] (http://jenkins-ci.org/) 
  * [Google drive oauth plugin for Jenkins] (https://wiki.jenkins-ci.org/display/JENKINS/Google+OAuth+Plugin)
- * Possible architecture: A [Jenkins Docker image running on Openshift v3]: (https://github.com/openshift/jenkins-1-centos) 
+ * Possible architecture: A [Jenkins Docker image running on Openshift v3] (https://github.com/openshift/jenkins-1-centos) 
 
 
  
