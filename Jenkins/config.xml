@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>DevOps Continuous Improvement for Github software Documentation that uses Google Docs collaboration and Gerrit change approval.  </description>
+  <displayName>docwheel</displayName>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.3">
+    <scms>
+      <hudson.plugins.git.GitSCM plugin="git@2.3.5">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <refspec>+refs/heads/master:refs/remotes/origin/master</refspec>
+            <url>https://SOMEUSER@review.gerrithub.io/SOME/PROJECT</url>
+            <credentialsId>SOME_CREDENTIALS_ADDED_BY_JENKINS_SMC</credentialsId>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+          <hudson.plugins.git.BranchSpec>
+            <name>*/master</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="list"/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+            <relativeTargetDir>GERRITREPO</relativeTargetDir>
+          </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+        </extensions>
+      </hudson.plugins.git.GitSCM>
+    </scms>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H/15 * * * *</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+#cd $WORKSPACE/GERRITREPO
+#git checkout master
+
+
+#setup google drive api utility drive written in Go Lang
+
+ 
+export GOPATH=$WORKSPACE/GOCODE
+
+drive=&quot;$WORKSPACE/GOCODE/bin/drive&quot;
+
+if [ ! -d $WORKSPACE/GOCODE ]; 
+  then 
+    mkdir -p $WORKSPACE/GOCODE/bin
+fi
+
+if [ ! -d $WORKSPACE/GOOGLE_LIVE ]; 
+  then 
+    mkdir -p $WORKSPACE/GOOGLE_LIVE/{indices,.gd}
+fi
+
+if [ ! -f $WORKSPACE/GOCODE/bin/drive ];
+  then
+    curl -s -o $WORKSPACE/GOCODE/bin/drive http://SOME_LOCATION_FOR_THE_DRIVE_BINARY/DRIVE/drive 
+    chmod 755 $WORKSPACE/GOCODE/bin/drive
+fi
+
+if [ ! -f GOOGLE_LIVE/.gd/credentials.json ]; 
+  then 
+    curl -s -o GOOGLE_LIVE/.gd/credentials.json http://SOME_LOCATION_FOR_THE_DRIVE_CREDENTIALS/DRIVE/credentials.json 
+fi 
+
+$WORKSPACE/GOCODE/bin/drive version 2&gt;/dev/null
+
+cd $WORKSPACE/GOOGLE_LIVE/ &amp;&amp; $WORKSPACE/GOCODE/bin/drive pull --no-clobber=false --no-prompt=true --export=&quot;txt,odt&quot; --export-dir=$WORKSPACE/GERRITREPO/docs/ 
+
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+
+#echo &quot;Current dir = `pwd`&quot;
+
+#echo &quot;workspace = $WORKSPACE&quot;
+
+#this is the git push to Gerrit change review repo where code is merged and submitted to main github repo. 
+
+cd $WORKSPACE/GERRITREPO
+
+#git checkout master
+git config --global user.email &quot;GITUSER@users.noreply.github.com&quot;
+git config --global user.name &quot;GITUSER&quot;
+#git config --local credential.helper store --file=/tmp/git4.credentials # timeout=10
+git add . 
+git commit -m &quot;`date +%F-%H-%M`&quot;
+git push ssh://GERRITUSER@review.gerrithub.io:29418/SOME/GERRIT_PROJECT HEAD:refs/for/master
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper plugin="ssh-agent@1.5">
+      <credentialIds>
+        <string>SOME_CREDENTIALS_YOU_ADDED_IN_JENKINS_SSH_PLUGIN</string>
+      </credentialIds>
+      <ignoreMissing>false</ignoreMissing>
+    </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    <org.jenkinsci.plugins.golang.GolangBuildWrapper plugin="golang@1.1">
+      <goVersion>Go 1.4.2</goVersion>
+    </org.jenkinsci.plugins.golang.GolangBuildWrapper>
+  </buildWrappers>
+</project>
