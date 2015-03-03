@@ -65,4 +65,4 @@ Technical components:
 Jenkins configuration: 
 
 
-Jenkins can be used for the irc
+Jenkins can be used as the orchestration tool.
