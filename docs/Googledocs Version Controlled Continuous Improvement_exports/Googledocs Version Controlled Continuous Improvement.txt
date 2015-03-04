@@ -65,4 +65,4 @@ Technical components:
 Jenkins configuration: 
 
 
-Jenkins can be used as the orchestration tool. The config for Jenkins is located in the jenkins sub directory. This is a new change
+Jenkins can be used as the orchestration tool. The config for Jenkins is located in the jenkins sub directory. This is another change

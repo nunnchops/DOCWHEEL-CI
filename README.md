@@ -17,10 +17,16 @@ Additional Technology that could be added:
  * A Linux distribution/Docker with crontab or [Jenkins] (http://jenkins-ci.org/) 
  * [Google drive oauth plugin for Jenkins] (https://wiki.jenkins-ci.org/display/JENKINS/Google+OAuth+Plugin)
  * Possible architecture: A [Jenkins Docker image running on Openshift v3] (https://github.com/openshift/jenkins-1-centos) 
-
-
  
 See docs dir for documentation, explanation 
 and use cases
+
+TODO:
+=====
+ 
+ * Configure docwheel for multi project document tracking on a single google doc account 
+   e.g. One google doc account may contain multiple project documentation directories
+   (may be best to use the more granular implementation of the drive google Go Lang script. 
+   [Located here] (https://github.com/prasmussen/gdrive/blob/master/README.md)
 
 
