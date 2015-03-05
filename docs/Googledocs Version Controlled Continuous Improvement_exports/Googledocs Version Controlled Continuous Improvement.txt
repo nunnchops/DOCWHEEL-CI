@@ -68,4 +68,25 @@ Jenkins configuration method:
 
 
 Jenkins can be used as the orchestration tool to run a Docwheel build project. The Docwheel Jenkins build project config is located in the jenkins sub directory. 
-The following Jenkins plugin modules are required:
+Jenkins config.xml for orchestrating Docwheel CI
+
+
+There are a few pre-requisites:
+
+
+Jenkins needs the following plugins:
+
+
+*   mercurial (if you want to build Go drive from code on the fly)**
+*   Go lang (for drive cli command)
+*   Git client (for repo management)
+*   multiple scm (for mulit workspace sub directories)
+*   ssh agent (for push back to Gerrit origin/master)
+
+
+**There is no really easy way to get mercurial support in the docker jenkins linux image
+so there is a simple curl command to grab a pre-compiled drive binary from a web server.
+
+
+NOTE ON SECURITY:
+The Go drive credentials.json will be unique for your environment, in this example it is pulled using curl over http, this is fine for a demo and a really private environment, but PLEASE NOTE THIS IS INSECURE over the internet.. use SCP instead. Existing TODO in the project README reflects this.
