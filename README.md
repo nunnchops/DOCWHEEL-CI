@@ -1,4 +1,4 @@
-DOCWHEEL-L3
+DOCWHEEL-CI
 ===========
 
 This is a simple linux based script and HowTo for a DevOps influenced solution 
