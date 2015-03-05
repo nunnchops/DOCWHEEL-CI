@@ -1,4 +1,4 @@
-﻿DOCWHEEL-L3
+﻿DOCWHEEL-CI
 
 
 
@@ -62,7 +62,15 @@ Technical components:
 6. Maybe a Jenkins Docker image running on Openshift: https://github.com/openshift/jenkins-1-centos 
 
 
-Jenkins configuration: 
+Crontab configuration method:
+Docwheel can be launched as a basic bash script on a Linux host machine. The bash script  utilises Go drive API CLI tool and git and automates the checkout and update of googledocs changes in a Continuous improvement way.  
+Jenkins configuration method: 
 
 
-Jenkins can be used as the orchestration tool. The config for Jenkins is located in the jenkins sub directory. This is another change
+Jenkins can be used as the orchestration tool to run a Docwheel build project. The Docwheel Jenkins build project config is located in the jenkins sub directory. 
+The following Jenkins plugin modules are required: 
+
+
+
+
+This is mats suggestion - this is Great!
