@@ -1,4 +1,4 @@
-﻿DOCWHEEL-CI
+﻿DOCWHEEL-CI[a]
 
 
 
@@ -11,7 +11,7 @@ Technical implementation of a DevOps Continuous Improvement methodology to creat
 The following document outlines the theory behind CI for google docs with github and gerrit addition.
 
 
-The rationale is the use of googledocs for collaborative document editing and creation. A project documentation artefact is collaboratively written and continuously pushed to a Gerrit CI approval system, the proposed changes can be viewed in the text version of the document and approved for push to the master github repo to provide a new release of the documentation. Gerrit is used to approve and track the changed documentation. The commits could be daily/nightly or by the minute, depending on change and approval cadence.
+The rationale is the use of googledocs for collaborative document editing and creation. A project documentation artefact is collaboratively written and continuously pushed to a Gerrit CI approval system. The proposed changes can be viewed in Gerrit in the text version of the document and approved for push to the master github repo to provide a new release of the documentation. Gerrit is used to approve and track the changed documentation. The commits could be daily/nightly or by the minute, depending on change and approval cadence.
 
 
 There are two main use cases: 
@@ -80,13 +80,32 @@ Jenkins needs the following plugins:
 *   mercurial (if you want to build Go drive from code on the fly)**
 *   Go lang (for drive cli command)
 *   Git client (for repo management)
-*   multiple scm (for mulit workspace sub directories)
+*   multiple scm (for multi workspace sub directories)
 *   ssh agent (for push back to Gerrit origin/master)
 
 
-**There is no really easy way to get mercurial support in the docker jenkins linux image
-so there is a simple curl command to grab a pre-compiled drive binary from a web server.
+**There is no really easy way to get mercurial support in the docker jenkins linux image (considering providing a custom dockerfile that uses the docker jenkins-latest image as a base and installs the config.xml from this repo automagically.... gotta love Docker ;) 
+so there is a simple curl command to grab a pre-compiled drive binary from a web server (not supplied and probably better to be provided in the github repo itself or over SCP rather than plain html. 
 
 
+Additional use case
+It would be possible to maintain a Dockerfile for an openshift V3 instance in a Google doc allowing developers access to change the dockerfile and resulting docker image contents with operations approval through gerrit. Watch this space ;)
 NOTE ON SECURITY:
-The Go drive credentials.json will be unique for your environment, in this example it is pulled using curl over http, this is fine for a demo and a really private environment, but PLEASE NOTE THIS IS INSECURE over the internet.. use SCP instead. Existing TODO in the project README reflects this.
+The Go drive credentials.json will be unique for your environment, in this example it is pulled using curl over http, this is fine for a demo and a really private environment, but PLEASE NOTE THIS IS INSECURE over the internet.. use SCP instead. Existing TODO in the project README reflects this. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[a]Refesh rate on this dock to Gerrit is currently 15 minutes. Make a change then check Gerrit for change and follow up approval. Thanks to OSE V3 Jenkins instance.
