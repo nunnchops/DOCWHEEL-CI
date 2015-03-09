@@ -85,9 +85,13 @@ Jenkins needs the following plugins:
 
 
 **There is no really easy way to get mercurial support in the docker jenkins linux image (considering providing a custom dockerfile that uses the docker jenkins-latest image as a base and installs the config.xml from this repo automagically.... gotta love Docker ;) 
-so there is a simple curl command to grab a pre-compiled drive binary from a web server (not supplied and probably better to be provided in the github repo itself or over SCP rather than plain html. 
+so there is a simple curl command to grab a pre-compiled drive binary from a web server (not supplied and probably better to be provided in the github repo itself or over SCP rather than plain html. This is fixed thanks to James Rawlings’ Jenkins Docker image here: 
 
 
+
+
+Additional use case
+It would be possible to maintain a Dockerfile for an openshift V3 instance in a Google doc allowing developers access to change the dockerfile and resulting docker image contents with operations approval through gerrit. Watch this space ;)
 NOTE ON SECURITY:
 The Go drive credentials.json will be unique for your environment, in this example it is pulled using curl over http, this is fine for a demo and a really private environment, but PLEASE NOTE THIS IS INSECURE over the internet.. use SCP instead. Existing TODO in the project README reflects this. 
 
