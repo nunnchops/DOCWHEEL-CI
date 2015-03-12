@@ -15,7 +15,7 @@ The Following Components are required and used:
  * A Linux System or Docker image with crontab
 
 Additional Technology that could be added: 
- * A Linux distribution/Docker with crontab or [Jenkins] (http://jenkins-ci.org/) 
+ * A Linux distribution/Docker with crontab or [Jenkins] (http://jenkins-ci.org/) COMPLETED AND IN THIS REPO: see Docker dir
  * [Google drive oauth] (https://wiki.jenkins-ci.org/display/JENKINS/Google+OAuth+Plugin) and [Jenkins Google APIs Client library] (https://wiki.jenkins-ci.org/display/JENKINS/Google+APIs+Client+Library) based java plugin for Jenkins TODO if anyone wants to volunteer?
  * Possible architecture: A [Jenkins Docker image running on Openshift v3] (https://github.com/openshift/jenkins-1-centos) Dockerfile now 
    present in this repo.  
