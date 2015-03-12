@@ -8,16 +8,15 @@ script, Jenkins Docker image and libre office HowTo.
 
 The Following Components are required and used: 
 
- * Google [Go Lang drive script] (https://github.com/odeke-em/drive).
- * [ Gerrit ] for collaborative change approval (http://gerrithub.io/)
- * [Github] for source version control (https://github.com/)
+ * Google [Go Lang drive script] (https://github.com/odeke-em/drive)
+ * [Gerrit] (http://gerrithub.io/) for collaborative change approval
+ * [Github] (https://github.com/) for source version control (https://github.com/)
  * Docwheel3 script located in this repository in the /scripts/ directory (the CI automation base) 
  * A Linux System or Docker image with crontab
 
 Additional Technology that could be added: 
  * A Linux distribution/Docker with crontab or [Jenkins] (http://jenkins-ci.org/) 
- * [Google drive oauth] Google API based java plugin for Jenkins TODO if anyone wants to volunteer \ 
-   (https://wiki.jenkins-ci.org/display/JENKINS/Google+OAuth+Plugin)
+ * [Google drive oauth] (https://wiki.jenkins-ci.org/display/JENKINS/Google+OAuth+Plugin) and [Jenkins Google APIs Client library] (https://wiki.jenkins-ci.org/display/JENKINS/Google+APIs+Client+Library) based java plugin for Jenkins TODO if anyone wants to volunteer?
  * Possible architecture: A [Jenkins Docker image running on Openshift v3] (https://github.com/openshift/jenkins-1-centos) Dockerfile now 
    present in this repo.  
  
