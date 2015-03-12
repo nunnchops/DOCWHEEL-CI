@@ -31,4 +31,6 @@ TODO:
    (may be best to use the more granular implementation of the drive google Go Lang script. 
    [Located here] (https://github.com/prasmussen/gdrive/blob/master/README.md)
 
+ * Add Do Lang Drive script build into the Jenkins project, Dockerfile/image already includes Go Lang
+   So addition is a simple task of updating the Docwheel Jenkins project config.   
 
