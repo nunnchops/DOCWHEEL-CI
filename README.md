@@ -8,8 +8,8 @@ script, Jenkins Docker image and libre office HowTo.
 
 The Following Components are required and used: 
 
- * Google [Go Lang drive script] (https://github.com/odeke-em/drive)
- * [Gerrit] for collaborative change approval (http://gerrithub.io/)
+ * Google [Go Lang drive script] (https://github.com/odeke-em/drive).
+ * [ Gerrit ] for collaborative change approval (http://gerrithub.io/)
  * [Github] for source version control (https://github.com/)
  * Docwheel3 script located in this repository in the /scripts/ directory (the CI automation base) 
  * A Linux System or Docker image with crontab
