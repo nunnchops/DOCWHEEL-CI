@@ -96,6 +96,8 @@ NOTE ON SECURITY:
 The Go drive credentials.json will be unique for your environment, in this example it is pulled using curl over http, this is fine for a demo and a really private environment, but PLEASE NOTE THIS IS INSECURE over the internet.. use SCP instead. Existing TODO in the project README reflects this. 
 
 
+Adding list of collaborators: 
+There are quite a few of us now
 
 
 
